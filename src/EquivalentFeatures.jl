@@ -528,28 +528,7 @@ module  EquivalentFeatures
                  end
 
 
-        function  W3jProductCToR(InvariantV,n)
 
-                    RInvariantVSize = 0;
-
-                    for I in 1:n
-                       RInvariantVSize = RInvariantVSize +(min((n-1),(n+I-2))-abs(n-I))+1;
-                    end
-
-                    RInvariantV = zeros(RInvariantVSize);
-                    Index =1;
-                     for I =1:size(WignerPI)[1]
-                       if WignerPI[I,1] != n
-                          continue;
-                       end
-                       if WignerPI[I,2] > n || WignerPI[I,3] > n
-                          continue;
-                       end
-                        RInvariantV[Index]= real(im^(WignerPI[I,1]-WignerPI[I,2]-WignerPI[I,3]+1.0)*InvariantV[Index]);
-                        Index = Index+1;
-                     end
-                     return RInvariantV;
-                 end
 
 
 
